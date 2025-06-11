@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+openai
+langchain
+pymupdf  # pour PDF
+pymongo
+python-dotenv
+faiss-cpu
