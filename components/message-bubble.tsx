@@ -1,3 +1,5 @@
+import React from "react"
+import ReactMarkdown from "react-markdown"
 import { cn } from "@/lib/utils"
 import { Bot, User } from "lucide-react"
 
@@ -17,11 +19,9 @@ export function MessageBubble({ message }: MessageBubbleProps) {
   const isUser = message.role === "user"
 
   // Sécurité : si parts n'existe pas ou n'est pas un tableau, on met un tableau vide
-const parts =
-  Array.isArray(message.parts)
+  const parts = Array.isArray(message.parts)
     ? message.parts
     : [{ type: "text", text: (message as any).content || "" }]
-
 
   return (
     <div className={cn("flex gap-3 mb-6", isUser ? "justify-end" : "justify-start")}>
@@ -37,24 +37,24 @@ const parts =
 
       <div
         className={cn(
-          "max-w-[80%] rounded-2xl px-4 py-3 shadow-sm",
+          "max-w-[80%] rounded-2xl px-4 py-3 shadow-sm prose",
           isUser
-            ? "bg-primary text-white rounded-br-md"
+            ? "bg-primary text-white rounded-br-md prose-invert"
             : "bg-white border border-gray-200 rounded-bl-md"
         )}
       >
         {parts.map((part, index) => {
           if (part.type === "text") {
             return (
-              <p
+              <div
                 key={`${message.id}-${index}`}
                 className={cn(
                   "text-sm leading-relaxed whitespace-pre-wrap",
                   isUser ? "text-white" : "text-gray-800"
                 )}
               >
-                {part.text}
-              </p>
+                <ReactMarkdown>{part.text}</ReactMarkdown>
+              </div>
             )
           }
           return null
@@ -73,5 +73,4 @@ const parts =
     </div>
   )
 }
-
 
