@@ -20,7 +20,6 @@ packaging==23.2
 tqdm==4.66.1
 pandas==2.2.3
 protobuf==3.20.3
-grpcio==1.60.0
 click==8.1.8
 cffi==1.16.0
 pycparser==2.21
