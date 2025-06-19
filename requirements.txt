@@ -6,3 +6,4 @@ pymupdf  # pour PDF
 pymongo
 python-dotenv
 faiss-cpu
+groq
