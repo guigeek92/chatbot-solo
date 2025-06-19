@@ -8,3 +8,6 @@ python-dotenv
 faiss-cpu
 groq
 langchain-community
+langchain-huggingface
+transformers
+torch
