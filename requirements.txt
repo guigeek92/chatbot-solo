@@ -23,4 +23,6 @@ protobuf==3.20.3
 click==8.1.8
 cffi==1.16.0
 pycparser==2.21
+sentence-transformers>=2.2.2
+
 
