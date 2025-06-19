@@ -11,3 +11,4 @@ langchain-community
 langchain-huggingface
 transformers
 torch
+language_tool_python
